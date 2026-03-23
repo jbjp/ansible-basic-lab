@@ -1,0 +1,15 @@
+---
+- name: Loop Playbook
+  hosts: copenhagen
+  gather_facts: true
+
+  tasks:
+    - name: Create multiple files
+      ansible.builtin.file:
+        path: "/tmp/{{ item }}"
+        state: touch
+        mode: '0644'
+      loop:
+        - file1.txt
+        - file2.txt
+        - file3.txt
