@@ -1,9 +1,7 @@
 ---
-- name: Deploy Nginx using collection (pladderballe)
+- name: Deploy Nginx using collection
   hosts: stockholm
   gather_facts: true
-  collections:
-   - local.webserver
 
   roles:
-   - nginx_install
+    - local.webserver.nginx_install
